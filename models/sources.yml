@@ -1,0 +1,37 @@
+version: 2
+
+sources:
+  - name: nj_001
+    database: silverscreen
+    schema: dbt_pscheinsohn
+    tables:
+      - name: nj_001
+        columns:
+          - name: movie_id
+            tests:
+              - not_null
+
+  - name: nj_002
+    database: silverscreen
+    schema: dbt_pscheinsohn
+    tables:
+      - name: nj_002
+        columns:
+          - name: movie_id
+            tests:
+              - not_null
+
+  - name:  nj_003
+    database: silverscreen
+    schema: dbt_pscheinsohn
+    tables:
+      - name: nj_003
+
+  - name:  movie_catalogue
+    database: silverscreen
+    schema: dbt_pscheinsohn
+    tables:
+      - name: movie_id
+        tests:
+          - not_null
+          - unique
