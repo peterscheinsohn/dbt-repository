@@ -31,7 +31,25 @@ sources:
     database: silverscreen
     schema: dbt_pscheinsohn
     tables:
-      - name: movie_id
-        tests:
-          - not_null
-          - unique
+      - name: movie_catalogue
+        columns:
+          - name: movie_id
+            tests:
+             - not_null
+             - unique
+
+  - name: invoices_corrected
+    database: silverscreen
+    schema: dbt_pscheinsohn
+    tables:
+      - name: invoices_corrected
+        columns:
+          - name: movie_id
+            tests:
+              - not_null
+          - name: location_id
+            tests:
+              - not_null
+          - name: weekly_price
+            tests:
+              - not_null
