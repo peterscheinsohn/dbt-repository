@@ -1,0 +1,55 @@
+version: 2
+
+sources:
+  - name: nj_001
+    database: silverscreen
+    schema: dbt_pscheinsohn
+    tables:
+      - name: nj_001
+        columns:
+          - name: movie_id
+            tests:
+              - not_null
+
+  - name: nj_002
+    database: silverscreen
+    schema: dbt_pscheinsohn
+    tables:
+      - name: nj_002
+        columns:
+          - name: movie_id
+            tests:
+              - not_null
+
+  - name:  nj_003
+    database: silverscreen
+    schema: dbt_pscheinsohn
+    tables:
+      - name: nj_003
+
+  - name:  movie_catalogue
+    database: silverscreen
+    schema: dbt_pscheinsohn
+    tables:
+      - name: movie_catalogue
+        columns:
+          - name: movie_id
+            tests:
+             - not_null
+             - unique
+
+  - name: invoices_corrected
+    database: silverscreen
+    schema: dbt_pscheinsohn
+    tables:
+      - name: invoices_corrected
+        columns:
+          - name: movie_id
+            tests:
+              - not_null
+          - name: location_id
+            tests:
+              - not_null
+          - name: weekly_price
+            tests:
+              - not_null

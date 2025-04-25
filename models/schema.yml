@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: movie_catalogue_clean
+    description: "Description of all running movies in New Jersey, where null genres are replaced"
+    columns:
+      - name: movie_id
+        tests:
+          - not_null
+          - unique
+      - name: genre
+        tests:
+          - not_null
+
+  - name: nj_cinemas
+    description: "Comprehensive report about all ticket sales in 3 cinemas"
+    columns:
+      - name: location
+        tests:
+          - not_null
+      - name: tickets_sold
+        tests:
+          - not_null
+      - name: revenue
+        tests:
+          - not_null
+
+  - name: nj_cinemas_overview
+    description: "Final model consolidating ticket sales in 3 cinemas with film rental price in every cinema"
+    columns:
+      - name: location
+        tests:
+          - not_null
+      - name: tickets_sold
+        tests:
+          - not_null
+      - name: revenue
+        tests:
+          - not_null
+      - name: rental_cost
+        tests:
+          - not_null
+
